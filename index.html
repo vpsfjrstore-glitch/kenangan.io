@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenangan Kita ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* gradient lembut */
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Hiasan romantis: love animasi */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">\
+    <text x="0" y="15" font-size="20">❤️</text></svg>') repeat;
+    opacity: 0.1;
+    animation: move 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes move {
+    0% {transform: translate(0,0);}
+    100% {transform: translate(50px,50px);}
+}
+
+.judul {
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Gallery zig-zag */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-container {
+    width: 90%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s;
+}
+
+.photo-container:nth-child(even) {
+    align-items: flex-end; /* zig-zag kanan */
+}
+
+.photo-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* kotak */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-container img:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Tombol Next */
+.next-container {
+    margin: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.next-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    background: #ff7eb9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background: #ff4b9c;
+}
+
+/* Halaman Video */
+.video-container {
+    display: none;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.video-container video {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+<body>
+
+<h1 class="judul">Kenangan Indah Kita ❤️</h1>
+
+<!-- Halaman Foto -->
+<div id="fotoPage">
+    <div class="gallery" id="gallery">
+        <div class="photo-container">
+            <img src="https://f.top4top.io/p_3703fs8ni8.jpg">
+            <div class="caption">Saat kamu pakai cadar, begitu cantik</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://c.top4top.io/p_3703mq6175.jpg">
+            <div class="caption">Senja romantis 🌅</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://j.top4top.io/p_3703oxgf40.jpg">
+            <div class="caption">Kamu sedang mengemil odol, kamu itu cantik</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://k.top4top.io/p_3703juzxc1.jpg">
+            <div class="caption">Liburan pertama kita 🏖️</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://l.top4top.io/p_3703o2yob2.jpg">
+            <div class="caption">Pesan penyemangatmu💪</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://a.top4top.io/p_3703165nh3.jpg">
+            <div class="caption">Senyummu begitu manis😘</div>
+        </div>
+    </div>
+    <a size="3">jaga diri baik-baik ya, maaf kalau aku mengecewakanmu,<br>dan kamu harus kuat menghadapi semuanya, tetap semangat thiya,<br>jangan pantang menyerah ya, jaga pola makan dan jangan begadang okey,<br>kamu gak boleh gampang nangis ya,<br>kamu harus kuat dan kamu pasti kuat,<br>thiya kamu itu salah faham,<br>aku bukan nangisin kamu tapi masalah yg tadi,<br>mungkin pas kamu baca ini<br>aku sudah tidak ada lagi di sini,<br>aku sudah pergi untuk semanya,<br>dan maaf atas semua salahku, aku pamit ya<br>assalamualaikum...<br>Klik nex ya, aku ada pesan terakhir untuk kamu</a>
+    <div class="next-container">
+        <button onclick="showVideo()" class="next-btn">Next ❤️</button>
+    </div>
+</div>
+
+<!-- Halaman Video -->
+<div id="videoPage" class="video-container">
+    <h1 class="judul">Untuk Kamu ❤️</h1>
+    <video id="myVideo" autoplay controls>
+        <source src="https://g.top4top.io/m_3703fggr29.mp4" type="video/mp4">
+        Browsermu tidak mendukung video.
+    </video>
+</div>
+
+<script>
+// Acak urutan foto
+function shuffleGallery() {
+    const gallery = document.getElementById("gallery");
+    for (let i = gallery.children.length; i >= 0; i--) {
+        gallery.appendChild(gallery.children[Math.random() * i | 0]);
+    }
+}
+
+window.onload = shuffleGallery;
+
+// Next → video
+function showVideo() {
+    document.getElementById("fotoPage").style.display = "none";
+    document.getElementById("videoPage").style.display = "block";
+    
+    var video = document.getElementById("myVideo");
+    video.muted = false;
+    video.play();
+}
+</script>
+
+</body>
+</html>
